@@ -47,6 +47,18 @@ public class Calculator {
     //todo: 11. Минимум из двух чисел
     //todo: 12. Абсолютное значение числа (число по модулю)
     //todo: 13. Логарифм по основанию 10 (проверка на отрицательность с выбрасыванием исключения) Елена Коптева
+    public static double decimalLogarithm (double number){
+        double decLog = 0;
+        try {
+            if (number < 0) {
+                throw new NegativeNumber("Decimal Logarithm is not avaible for negative values.");
+            }
+            decLog = Math.log10(number);
+        } catch (NegativeNumber negativeNumber) {
+            System.out.println("Error! " + negativeNumber.getMessage());
+        }
+        return decLog;
+    }
     //todo: 14. Округление числа до N знаков после запятой (проверка на отрицательность N с выбрасыванием исключения)
     //todo: 15. Генерация случайного числа в заданном диапазоне (проверка на разницу мин макс с выбрасыванием исключения) Андрей Вожегов
 
